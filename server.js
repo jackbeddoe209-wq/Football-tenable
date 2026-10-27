@@ -20,7 +20,7 @@ const rounds=[
 ['Champions League','Liverpool 2019 Champions League final: name their 10 starting outfield players',['Trent Alexander-Arnold','Joël Matip','Virgil van Dijk','Andrew Robertson','Jordan Henderson','Fabinho','Georginio Wijnaldum','Mohamed Salah','Roberto Firmino','Sadio Mané']],
 ['Champions League','Real Madrid 2022 Champions League final: name their 10 starting outfield players',['Dani Carvajal','Éder Militão','David Alaba','Ferland Mendy','Casemiro','Luka Modrić','Toni Kroos','Federico Valverde','Karim Benzema','Vinícius Júnior']]
 ];
-rounds.push(...require('./bonus-rounds'));
+rounds.push(...require('./bonus-rounds'));rounds.push(...require('./player-stat-rounds'));
 const cats=[...new Set(rounds.map(x=>x[0]))];
 const norm=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]/g,'').replace(/fc$/,'');
 const aliases={'spurs':'Tottenham Hotspur','man city':'Manchester City','man utd':'Manchester United','man united':'Manchester United','west ham':'West Ham United','newcastle':'Newcastle United','brighton':'Brighton & Hove Albion','wolves':'Wolverhampton Wanderers','villa':'Aston Villa','palace':'Crystal Palace','leicester':'Leicester City','forest':'Nottingham Forest','west brom':'West Bromwich Albion','sheff utd':'Sheffield United','boro':'Middlesbrough','liverpool fc':'Liverpool'};
