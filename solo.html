@@ -11,7 +11,7 @@ const rounds=[
 ['2023/24 Championship top ten',['Leicester City','Ipswich Town','Leeds United','Southampton','West Bromwich Albion','Norwich City','Hull City','Middlesbrough','Coventry City','Preston North End']],
 ['2022/23 Championship top ten',['Burnley','Sheffield United','Luton Town','Middlesbrough','Coventry City','Sunderland','Blackburn Rovers','Millwall','West Bromwich Albion','Swansea City']],
 ['2021/22 Championship top ten',['Fulham','Bournemouth','Huddersfield Town','Nottingham Forest','Sheffield United','Luton Town','Middlesbrough','Blackburn Rovers','Millwall','West Bromwich Albion']],
-['All-time Premier League appearance leaders (through 2023/24)',['Gareth Barry','James Milner','Ryan Giggs','Frank Lampard','David James','Gary Speed','Emile Heskey','Mark Schwarzer','Jamie Carragher','Phil Neville']],
+['Premier League appearance leaders (historical 2023/24)',['Gareth Barry','James Milner','Ryan Giggs','Frank Lampard','David James','Gary Speed','Emile Heskey','Mark Schwarzer','Jamie Carragher','Phil Neville']],
 ['Most Premier League matches managed (through 2023/24)',['Arsène Wenger','Alex Ferguson','David Moyes','Harry Redknapp','Sam Allardyce','Steve Bruce','Mark Hughes','Roy Hodgson','José Mourinho','Rafael Benítez']],
 ['Argentina 2022 World Cup final outfield starters',['Nahuel Molina','Cristian Romero','Nicolás Otamendi','Nicolás Tagliafico','Rodrigo De Paul','Enzo Fernández','Alexis Mac Allister','Lionel Messi','Julián Álvarez','Ángel Di María']],
 ['France 2018 World Cup final outfield starters',['Benjamin Pavard','Raphaël Varane','Samuel Umtiti','Lucas Hernández','Paul Pogba','N’Golo Kanté','Kylian Mbappé','Antoine Griezmann','Blaise Matuidi','Olivier Giroud']],
@@ -43,6 +43,56 @@ rounds.push(...([
 ['PREMIER LEAGUE','Top 10 clubs in the 1995/96 Premier League table',['Manchester United','Newcastle United','Liverpool','Aston Villa','Arsenal','Everton','Blackburn Rovers','Tottenham Hotspur','Nottingham Forest','West Ham United']],
 ['PREMIER LEAGUE','Top 10 clubs in the 1994/95 Premier League table',['Blackburn Rovers','Manchester United','Nottingham Forest','Liverpool','Leeds United','Newcastle United','Tottenham Hotspur','Queens Park Rangers','Wimbledon','Southampton']]
 ]).map(x=>[x[1].replace(/^Top 10 clubs in the /,'').replace(/ table$/,'')+' top ten',x[2]]));
+rounds.push(...([
+  [
+    "Player appearances",
+    "Premier League all-time appearances — top 10 (through 2025/26)",
+    [
+      "James Milner",
+      "Gareth Barry",
+      "Ryan Giggs",
+      "Frank Lampard",
+      "David James",
+      "Gary Speed",
+      "Emile Heskey",
+      "Mark Schwarzer",
+      "Jamie Carragher",
+      "Phil Neville"
+    ]
+  ],
+  [
+    "Player goals",
+    "Premier League all-time goals — top 10 (through 2025/26)",
+    [
+      "Alan Shearer",
+      "Harry Kane",
+      "Wayne Rooney",
+      "Mohamed Salah",
+      "Andy Cole",
+      "Sergio Agüero",
+      "Frank Lampard",
+      "Thierry Henry",
+      "Robbie Fowler",
+      "Jermain Defoe"
+    ]
+  ],
+  [
+    "Player assists",
+    "Premier League all-time assists — top 10 (through 2025/26)",
+    [
+      "Ryan Giggs",
+      "Kevin De Bruyne",
+      "Cesc Fàbregas",
+      "Wayne Rooney",
+      "Frank Lampard",
+      "Dennis Bergkamp",
+      "Mohamed Salah",
+      "David Silva",
+      "Steven Gerrard",
+      "James Milner"
+    ]
+  ]
+]).map(x=>[x[1],x[2]]));
 const extraClubs=['Northampton Town','Peterborough United','Wrexham','Port Vale','Bristol City','Watford','Queens Park Rangers','Cardiff City','Oxford United','Plymouth Argyle','Derby County','Sheffield Wednesday','Huddersfield Town','Birmingham City','Blackpool','Barnsley','Rotherham United','Reading','Portsmouth','Bolton Wanderers','Charlton Athletic','Wigan Athletic','Swansea City','Stoke City','Nottingham Forest','Burnley','Luton Town','Leeds United','Southampton','Ipswich Town','Leicester City','Sunderland','Coventry City','Norwich City','Middlesbrough','Millwall','Blackburn Rovers','Plymouth Argyle','Bournemouth','Brentford','Crystal Palace','Fulham','Everton','West Ham United','Newcastle United','Wolverhampton Wanderers','Brighton & Hove Albion','Manchester City','Manchester United','Liverpool','Chelsea','Arsenal','Tottenham Hotspur','Aston Villa'];
 const extraPeople=['Mohamed Salah','Harry Kane','Wayne Rooney','Alan Shearer','Steven Gerrard','Paul Scholes','Kevin De Bruyne','Erling Haaland','Sergio Agüero','Didier Drogba','Thierry Henry','Marcus Rashford','Bukayo Saka','Virgil van Dijk','Cole Palmer','Phil Foden','Jude Bellingham','Declan Rice','John Terry','Rio Ferdinand','Sadio Mané','Son Heung-min','Raheem Sterling','Bruno Fernandes','Jamie Vardy','Peter Crouch','Michael Owen','Robbie Fowler','David Beckham','Zlatan Ibrahimović','Alex Ferguson','Pep Guardiola','Jürgen Klopp','Carlo Ancelotti','Antonio Conte','Mikel Arteta','Unai Emery','Eddie Howe','José Mourinho','Arsène Wenger','David Moyes'];
 const vocabulary=[...new Set([...rounds.flatMap(q=>q[1]),...extraClubs,...extraPeople])].sort((a,b)=>a.localeCompare(b));
